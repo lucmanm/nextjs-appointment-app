@@ -30,7 +30,7 @@ export default function Header() {
       <MobileMenu />
       <div className="flex space-x-6">
         <Link href="/">
-        <Image src="/logo.svg" alt="Logo" width={150} height={100} />
+          <Image src="/logo.svg" alt="Logo" width={150} height={100} />
         </Link>
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
