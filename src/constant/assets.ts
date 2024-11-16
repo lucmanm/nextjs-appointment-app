@@ -37,6 +37,7 @@ import razorpay_logo from '../../public/images/razorpay_logo.png'
 import stripe_logo from '../../public/images/stripe_logo.png'
 import upload_icon from '../../public/images/upload_icon.png'
 
+export const defaultIamge = "https://res.cloudinary.com/dzdcszrob/image/upload/v1721465707/playground-images/icons/q2dwvixku4oxmgjer5gd.svg"
 
 export const assets = {
     appointment_img,
