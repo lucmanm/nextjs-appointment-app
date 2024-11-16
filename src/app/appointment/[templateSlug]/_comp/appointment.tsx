@@ -11,6 +11,9 @@ interface TimeSlot {
 export const Appointment = () => {
   const [docSlots, setDocSlots] = useState<TimeSlot[][]>([]);
   const dayOfWeek = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  const [slotIndex, setSlotIndex] = useState(0);
+  const [slotTime, setSlotTime] = useState("");
+
   const getAvailableSlots = async () => {
     const today = new Date();
 
@@ -65,19 +68,31 @@ export const Appointment = () => {
 
   return (
     <Fragment>
-      {docSlots.map((items, dayIndex) => (
-        <div key={dayIndex}>
-          <Button className="rounded-full flex">
-            <span className="font-bold text-lg mt-4 capitalize">{dayOfWeek[items[0].datetime.getDay()]}</span>
-            <span className="font-bold text-lg mt-4 capitalize">{items[0].datetime.getDate()}</span>
+      {/* Days of week */}
+      <div className="flex py-1 items-center gap-3  ">
+        {docSlots.map((items, dayIndex) => (
+          <Button key={dayIndex} className="rounded-full flex items-center border *:text-sm">
+            <span className="font-bold text-lg capitalize">{dayOfWeek[items[0].datetime.getDay()]}</span>
+            <span className="font-bold text-lg capitalize">{items[0].datetime.getDate()}</span>
           </Button>
-          {items.map((slot, slotIndex) => (
-            <div key={slotIndex}>
-              <span>{slot.time}</span>
-            </div>
+        ))}
+      </div>
+      {/* Booking Time */}
+      <div className="flex py-1 items-center gap-3 text-sm overflow-x-scroll ">
+        {docSlots.length &&
+          docSlots[slotIndex].map((items, idx) => (
+            <Button
+              onClick={() => setSlotTime(items.time)}
+              key={idx}
+              className={`hover:bg-slate-950 hover:text-white ${
+                items.time === slotTime ? "bg-slate-950 text-white" : "bg-none"
+              }`}
+              variant="ghost"
+            >
+              {items.time.toLowerCase()}
+            </Button>
           ))}
-        </div>
-      ))}
+      </div>
     </Fragment>
   );
 };
