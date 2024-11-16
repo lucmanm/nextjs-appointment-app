@@ -16,7 +16,6 @@ export const Appointment = () => {
 
   const getAvailableSlots = async () => {
     const today = new Date();
-
     const slots: TimeSlot[][] = [];
 
     for (let i = 0; i < 7; i++) {
@@ -69,18 +68,24 @@ export const Appointment = () => {
   return (
     <Fragment>
       {/* Days of week */}
-      <div className="flex py-1 items-center gap-3  ">
+      <div className="flex py-1 items-center gap-3">
         {docSlots.map((items, dayIndex) => (
-          <Button key={dayIndex} className="rounded-full flex items-center border *:text-sm">
-            <span className="font-bold text-lg capitalize">{dayOfWeek[items[0].datetime.getDay()]}</span>
-            <span className="font-bold text-lg capitalize">{items[0].datetime.getDate()}</span>
-          </Button>
+          items.length > 0 && ( // Add this check to avoid accessing undefined data
+            <Button
+              key={dayIndex}
+              onClick={() => setSlotIndex(dayIndex)}
+              className="rounded-full flex items-center border text-sm"
+            >
+              <span className="font-bold text-lg capitalize">{dayOfWeek[items[0].datetime.getDay()]}</span>
+              <span className="font-bold text-lg capitalize">{items[0].datetime.getDate()}</span>
+            </Button>
+          )
         ))}
       </div>
       {/* Booking Time */}
-      <div className="flex py-1 items-center gap-3 text-sm overflow-x-scroll ">
-        {docSlots.length &&
-          docSlots[slotIndex].map((items, idx) => (
+      <div className="flex py-1 items-center gap-3 text-sm overflow-x-scroll">
+        {docSlots.length > 0 &&
+          docSlots[slotIndex]?.map((items, idx) => (
             <Button
               onClick={() => setSlotTime(items.time)}
               key={idx}

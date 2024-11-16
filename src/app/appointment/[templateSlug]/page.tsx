@@ -4,10 +4,10 @@ import { Card, CardContent, CardDescription, CardFooter, CardTitle } from "@/com
 import { assets, defaultIamge, doctors } from "@/constant/assets";
 import { Info } from "lucide-react";
 import Image from "next/image";
+import RelatedDocotrs from "./_comp/related-doctors";
 
 const Page = async ({ params }: { params: Promise<{ templateSlug: string }> }) => {
   const slug = (await params).templateSlug;
-
   const doctor = doctors.find((data) => data.name === decodeURIComponent(slug));
 
   return (
@@ -44,9 +44,11 @@ const Page = async ({ params }: { params: Promise<{ templateSlug: string }> }) =
           </CardFooter>
         </Card>
       </section>
+      {/* Appointment Component */}
       <Appointment />
 
-      <section></section>
+      {/* Related Doctors  */}
+      <RelatedDocotrs speciality={doctor?.speciality} />
     </div>
   );
 };
