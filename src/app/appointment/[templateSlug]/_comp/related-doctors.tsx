@@ -35,9 +35,7 @@ export default function RelatedDoctors({ speciality }: { speciality?: string }) 
     <Fragment>
       <h2>Related Doctors</h2>
       {relatedDoc.length > 0 ? (
-        relatedDoc.map((item, id) => (
-          <CardDoctors key={id} doctors={[item]} />
-        ))
+          <CardDoctors doctors={relatedDoc} />
       ) : (
         <p>No doctors found for the selected speciality.</p>
       )}
