@@ -18,7 +18,7 @@ export type TDoctors = {
 };
 export default function CardDoctors({ doctors }: { doctors: TDoctors[] }) {
   return (
-    <div className="grid max-sm:grid-cols-2 gap-4 p-4 grid-cols-4">
+    <div className="grid max-sm:grid-cols-2 gap-4 grid-cols-4">
       {doctors.length >= 0 &&
         doctors.map((data, idx) => (
           <Link key={idx} href={`/appointment/${encodeURIComponent(data.name)}`}>

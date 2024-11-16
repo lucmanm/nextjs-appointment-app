@@ -32,13 +32,13 @@ export default function RelatedDoctors({ speciality }: { speciality?: string }) 
   }, [speciality]);
 
   return (
-    <Fragment>
-      <h2>Related Doctors</h2>
+    <section className=" p-4">
+      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold py-2">Related Doctors</h2>
       {relatedDoc.length > 0 ? (
-          <CardDoctors doctors={relatedDoc} />
+        <CardDoctors doctors={relatedDoc} />
       ) : (
         <p>No doctors found for the selected speciality.</p>
       )}
-    </Fragment>
+    </section>
   );
 }
