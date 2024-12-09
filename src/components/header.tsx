@@ -5,10 +5,10 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import Image from "next/image";
 import Link from "next/link";
-import { Button } from "./ui/button";
+import { IconHeader } from "./icon-header";
 import MobileMenu from "./menu/mb-menu";
+import { Button } from "./ui/button";
 
 export const menu = [
   {
@@ -30,16 +30,7 @@ export default function Header() {
       <MobileMenu />
       <div className="flex space-x-6 items-center">
         {/* Logo header icon */}
-        <Link href="/" className="flex items-center gap-2 font-semibold">
-          <Image
-            src="https://res.cloudinary.com/dzdcszrob/image/upload/v1733784642/icons/prgwxxiyf4w0jrme59mv.jpg"
-            alt="Logo"
-            width={28}
-            height={28}
-            className="rounded-sm overflow-hidden border shadow"
-          />
-          <span className="text-1xl">Lucmanm</span>
-        </Link>
+        <IconHeader />
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             {menu.map((data, idx) => (
