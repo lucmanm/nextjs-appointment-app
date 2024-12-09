@@ -28,9 +28,17 @@ export default function Header() {
   return (
     <header className="flex items-center p-4 border-b space-x-4 justify-between">
       <MobileMenu />
-      <div className="flex space-x-6">
-        <Link href="/">
-          <Image src="/logo.svg" alt="Logo" width={150} height={100} />
+      <div className="flex space-x-6 items-center">
+        {/* Logo header icon */}
+        <Link href="/" className="flex items-center gap-2 font-semibold">
+          <Image
+            src="https://res.cloudinary.com/dzdcszrob/image/upload/v1733784642/icons/prgwxxiyf4w0jrme59mv.jpg"
+            alt="Logo"
+            width={28}
+            height={28}
+            className="rounded-sm overflow-hidden border shadow"
+          />
+          <span className="text-1xl">Lucmanm</span>
         </Link>
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
