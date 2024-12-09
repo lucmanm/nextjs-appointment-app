@@ -1,3 +1,4 @@
+
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
@@ -29,7 +30,7 @@ export default function CardDoctors({ doctors }: { doctors: TDoctors[] }) {
                 <CardDescription className="line-clamp-2 text-xs md:text-sm">{data.about}</CardDescription>
               </CardContent>
               <CardFooter>
-                <Button className="w-full gap-x-4" onClick={() => {}}>
+                <Button className="w-full gap-x-4">
                   Book Appointment
                 </Button>
               </CardFooter>
