@@ -1,10 +1,10 @@
-import { Appointment } from "@/app/appointment/[templateSlug]/_comp/appointment";
+import { Appointment } from "@/app/appointment/[templateSlug]/_appointment";
 import { Card, CardContent, CardDescription, CardFooter, CardTitle } from "@/components/ui/card";
 
 import { assets, defaultIamge, doctors } from "@/constant/assets";
 import { Info } from "lucide-react";
 import Image from "next/image";
-import RelatedDocotrs from "./_comp/related-doctors";
+import RelatedDocotrs from "./_related-doctors";
 
 const Page = async ({ params }: { params: Promise<{ templateSlug: string }> }) => {
   const slug = (await params).templateSlug;
@@ -44,6 +44,7 @@ const Page = async ({ params }: { params: Promise<{ templateSlug: string }> }) =
           </CardFooter>
         </Card>
       </section>
+
       {/* Appointment Component */}
       <Appointment />
 

@@ -3,7 +3,7 @@
 import CardDoctors from "@/components/card-doctors";
 import { doctors } from "@/constant/assets";
 import { StaticImageData } from "next/image";
-import { useState, useEffect, Fragment } from "react";
+import { useEffect, useState } from "react";
 
 type TRelatedDoctor = {
   _id: string;
