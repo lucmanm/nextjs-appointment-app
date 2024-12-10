@@ -1,10 +1,15 @@
 import React from 'react'
 
-const Page = () => {
+const Page = async ({
+  params,
+}: {
+  params: Promise<{ doctorType: string }>
+}) => {
+  const slug = (await params).doctorType
   return (
-    <div>
-      Docors
-    </div>
+    <section className='p-4'>
+      {slug}
+    </section>
   )
 }
 
