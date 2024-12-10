@@ -25,7 +25,7 @@ export const Speciality = () => (
     {/* spaciality list */}
     <div className="flex gap-8 text-sm">
       {specialityData.map((data, id) => (
-        <div key={id} className="items-center flex flex-col justify-evenly space-y-2">
+        <div key={id} className="items-center flex flex-col justify-evenly space-y-2 hover:animate-bounce ">
           <Image src={data.image} alt={data.speciality} height={100} width={100} />
           <span>{data.speciality}</span>
         </div>
@@ -109,7 +109,7 @@ export const Footer = () => {
             </Link>
           </nav>
           <p className="text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Your Blog Name. All rights reserved.
+            © {new Date().getFullYear()} Lucmanm. All rights reserved.
           </p>
         </div>
       </div>
