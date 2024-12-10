@@ -14,8 +14,8 @@ export const SideBar = ({ className }: { className?: string }) => {
             key={id}
             href={`/doctors/${data.speciality}`}
             className={`border p-2 rounded-md ${
-              data.speciality === params.doctorType
-                ? "bg-slate-950 text-white hover:text-slate-950 hover:bg-white hover:border-slate-950"
+              data.speciality.toLowerCase() === decodeURIComponent(params.doctorType).toLowerCase()
+                ? "bg-slate-950 text-white hover:text-slate-950 hover:bg-white hover:border-slate-950 transition-all"
                 : "hover:border-slate-950"
             }`}
           >
