@@ -7,18 +7,24 @@ import React from "react";
 const Page = () => {
   return (
     <div className="my-4 space-y-4 flex-1">
-      <Card className="text-xl font-semibold px-4 py-2">
+      <Card className="max-sm:text-sm text-xl font-semibold px-4 py-2">
         <span>My Appointments</span>
       </Card>
       {doctors.slice(0, 2).map((data, id) => (
         <Card key={id} className="shadow-sm ">
-          <CardContent className="flex pt-2 md:pt-4 h-48">
+          <CardContent className="flex p-4 md:p-4  md:h-48 gap-2 md:gap-4 max-sm:grid max-sm:grid-cols-3">
             {/* doctor Image */}
-            <Image alt={data.name} src={data.image} width={200} height={500} className="object-contain" />
+            <Image
+              alt={data.name}
+              src={data.image}
+              width={200}
+              height={500}
+              className="object-cover bg-blue-200 rounded-md w-36 shrink"
+            />
 
             {/* Doctor Information */}
-            <div className="grow *:block ">
-              <h2 className="text-lg font-semibold">{data.name}</h2>
+            <div className="grow *:block *:max-sm:text-sm max-sm:col-span-2">
+              <h2 className="text-lg font-semibold ">{data.name}</h2>
               <i>{data.speciality}</i>
               <b>Address:</b>
               <address>
@@ -29,7 +35,7 @@ const Page = () => {
             </div>
 
             {/* Buttons actions */}
-            <div className="grid grid-cols-1 gap-4 md:gap-2 content-end ">
+            <div className="grid grid-cols-1 gap-4 md:gap-2 content-end max-sm:col-span-3 max-sm:grid-cols-2">
               <Button>Pay Online</Button>
               <Button className="" variant={"destructive"}>
                 Cancel Appointment
