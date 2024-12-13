@@ -12,7 +12,7 @@ const Page = async ({ params }: { params: Promise<{ doctorType: string }> }) => 
   return doctorsByType.length > 0 ? (
     <CardDoctors doctors={doctorsByType} />
   ) : (
-    <Card className="w-full font-semibold px-4 py-2">No Doctor Available</Card>
+    <Card className="w-full font-semibold px-4 py-2 mt-4 shadow-sm">No Doctor Available</Card>
   );
 };
 
