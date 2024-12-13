@@ -7,6 +7,9 @@ import React from "react";
 const Page = () => {
   return (
     <div className="my-4 space-y-4 flex-1">
+      <Card className="text-xl font-semibold px-4 py-2">
+        <span>My Appointments</span>
+      </Card>
       {doctors.slice(0, 2).map((data, id) => (
         <Card key={id} className="shadow-sm ">
           <CardContent className="flex pt-2 md:pt-4 h-48">
