@@ -2,7 +2,6 @@
 
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
-import { Button } from "@/components/ui/button";
 import { FilterIcon } from "lucide-react";
 import { useState } from "react";
 import { SideBar } from "./side-bar";
@@ -17,11 +16,8 @@ export default function FilterSheet() {
         <span>Filter</span>
       </SheetTrigger>
       <SheetContent side="left" className="py-5">
-        <SheetTitle>Filter Category</SheetTitle>
-        <div className="flex flex-col py-4 *:py-2 *:pl-3 *:rounded-md space-y-2 hover:*:bg-gray-100 font-semibold">
-          <SideBar />
-        </div>
-        <Button onClick={() => setIsOpen((prev) => !prev)}>TEsting</Button>
+        <SheetTitle className="shadow-sm border rounded-md px-4 font-semibold">Filter</SheetTitle>
+        <SideBar className="mt-4"/>
       </SheetContent>
     </Sheet>
   );
