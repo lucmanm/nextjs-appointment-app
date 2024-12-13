@@ -8,11 +8,7 @@ const Page = async ({ params }: { params: Promise<{ doctorType: string }> }) => 
     (data) => data.speciality.toLowerCase() === decodeURIComponent(slug).toLowerCase()
   );
 
-  return (
-    <section className="p-4">
-      <CardDoctors doctors={doctorsByType} />
-    </section>
-  );
+  return <CardDoctors doctors={doctorsByType} />
 };
 
 export default Page;

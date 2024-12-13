@@ -6,8 +6,9 @@ import { useParams } from "next/navigation";
 
 export const SideBar = ({ className }: { className?: string }) => {
   const params = useParams<{ doctorType: string }>();
+
   return (
-    <div className={cn(className)}>
+    <div className={cn("",className)}>
       <div className="flex flex-col gap-y-2">
         {specialityData.map((data, id) => (
           <Link
