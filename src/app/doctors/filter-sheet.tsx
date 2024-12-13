@@ -17,7 +17,7 @@ export default function FilterSheet() {
       </SheetTrigger>
       <SheetContent side="left" className="py-5">
         <SheetTitle className="shadow-sm border rounded-md px-4 font-semibold">Filter</SheetTitle>
-        <SideBar className="mt-4"/>
+        <SideBar className="mt-4" setIsOpen={setIsOpen} />
       </SheetContent>
     </Sheet>
   );
