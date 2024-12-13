@@ -9,7 +9,7 @@ export const SideBar = ({ className }: { className?: string }) => {
 
   return (
     <div className={cn("",className)}>
-      <div className="flex flex-col gap-y-2">
+      <div className="flex flex-col gap-y-2 bg-transparent">
         {specialityData.map((data, id) => (
           <Link
             key={id}

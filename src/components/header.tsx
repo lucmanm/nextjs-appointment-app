@@ -51,7 +51,7 @@ export default function Header() {
           </NavigationMenu>
         </div>
         {/* <Button onClick={() => router.push("/login")}> Get Started</Button> */}
-        <UserMenuDropdown/>
+        <UserMenuDropdown />
       </div>
     </header>
   );
