@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 
 export const Title = ({ title, description }: { title: string; description: string }) => (
   <div className="text-center space-y-2">
@@ -43,9 +44,9 @@ export const TopDoctors = () => (
   </div>
 );
 
-export const Footer = () => {
+export const Footer = ({ className }: { className?: string }) => {
   return (
-    <footer className="bg-muted py-12 mt-12">
+    <footer className={cn("bg-muted py-12 mt-12", className)}>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">

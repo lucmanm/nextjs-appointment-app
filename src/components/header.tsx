@@ -1,3 +1,4 @@
+"use client";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -9,6 +10,7 @@ import Link from "next/link";
 import { IconHeader } from "./icon-header";
 import MobileMenu from "./menu/mb-menu";
 import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 export const menu = [
   {
@@ -26,6 +28,7 @@ export const menu = [
 ];
 
 export default function Header() {
+  const router = useRouter();
   return (
     <header className="flex items-center p-4 border-b space-x-4 justify-between">
       <div className="container mx-auto flex justify-between max-sm:w-full">
@@ -48,7 +51,7 @@ export default function Header() {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <Button> Get Started</Button>
+        <Button onClick={() => router.push("/login")}> Get Started</Button>
       </div>
     </header>
   );
