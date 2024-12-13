@@ -8,7 +8,7 @@ export const SideBar = ({ className }: { className?: string }) => {
   const params = useParams<{ doctorType: string }>();
 
   return (
-    <div className={cn("",className)}>
+    <div className={cn("", className)}>
       <div className="flex flex-col gap-y-2 bg-transparent">
         {specialityData.map((data, id) => (
           <Link

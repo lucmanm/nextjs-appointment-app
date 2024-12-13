@@ -21,8 +21,12 @@ export default function CardDoctors({ doctors }: { doctors: TDoctors[] }) {
     <div className="grid max-sm:grid-cols-2 gap-4 grid-cols-4">
       {doctors.length >= 0 &&
         doctors.map((data, idx) => (
-          <Link key={idx} href={`/appointment/${encodeURIComponent(data.name)}`}>
-            <Card className="pt-4 text-xs max-sm:rounded-md md:text-sm">
+          <Link
+            key={idx}
+            href={`/appointment/${encodeURIComponent(data.name)}`}
+            className="pt-4 text-xs max-sm:rounded-md md:text-sm shadow-sm"
+          >
+            <Card>
               <CardContent className="flex flex-col gap-y-4">
                 <Image height={500} width={500} alt={data.name} src={data.image} className="w-full rounded-sm" />
                 <CardTitle className="line-clamp-2 leading-4">{data.name}</CardTitle>

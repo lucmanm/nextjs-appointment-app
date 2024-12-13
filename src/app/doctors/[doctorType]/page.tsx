@@ -1,4 +1,5 @@
 import CardDoctors from "@/components/card-doctors";
+import { Card } from "@/components/ui/card";
 import { doctors } from "@/constant/assets";
 
 const Page = async ({ params }: { params: Promise<{ doctorType: string }> }) => {
@@ -8,7 +9,11 @@ const Page = async ({ params }: { params: Promise<{ doctorType: string }> }) => 
     (data) => data.speciality.toLowerCase() === decodeURIComponent(slug).toLowerCase()
   );
 
-  return <CardDoctors doctors={doctorsByType} />
+  return doctorsByType.length > 0 ? (
+    <CardDoctors doctors={doctorsByType} />
+  ) : (
+    <Card className="w-full font-semibold px-4 py-2">No Doctor Available</Card>
+  );
 };
 
 export default Page;
