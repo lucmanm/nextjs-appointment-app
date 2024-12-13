@@ -20,7 +20,7 @@ export default function UserMenuDropdown() {
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
-        <Button variant="ghost" className="relative size-8 rounded-full">
+        <Button variant="ghost" className="relative size-8 rounded-full border">
           <Avatar className="size-8 font-semibold">
             <AvatarImage src="/avatars/01.png" alt="@username" />
             <AvatarFallback>LM</AvatarFallback>
